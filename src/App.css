@@ -1,38 +1,133 @@
+/* General styles */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 88, 1) 24%, rgba(0, 212, 255, 1) 100%);
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header styles */
+.App-header {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  color: gray;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.App-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 20px;
+}
+
+.App-form input {
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px; 
+  border: 2px solid #007bff;
+  width: 300px;
+  outline: none;
+}
+
+.App-form button {
+  background-color: #007bff;
   color: white;
+  padding: 12px 24px; 
+  border: none;
+  border-radius: 10px; 
+  cursor: pointer;
+  font-size: 18px;
+  width: 200px;
+  outline: none;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.App-form button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Task list styles */
+.App-task-list {
+  margin-top: 20px;
+}
+
+.App-task-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.App-task-list th,
+.App-task-list td {
+  border: 1px solid #ddd;
+  padding: 14px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.App-task-list th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.App-task-list tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.App-task-list tr:hover {
+  background-color: #ddd;
+}
+
+/* Button styles */
+.App-task-list button {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.App-task-list button:hover {
+  background-color: #c82333;
+}
+
+/* Completed task styles */
+.completed {
+  background-color: #e6ffed;
+}
+
+.App-task-list tr:hover .completed {
+  background-color: #d6f2e6;
+}
+
+/* Clear completed button styles */
+.App-clear-completed {
+  background-color: #6c757d;
+  color: white;
+  padding: 12px 24px; 
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 200px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.App-clear-completed:hover {
+  background-color: #5a6268;
 }
