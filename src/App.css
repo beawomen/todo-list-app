@@ -8,6 +8,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  padding: 20px;
 }
 
 /* Header styles */
@@ -130,4 +133,54 @@
 
 .App-clear-completed:hover {
   background-color: #5a6268;
+}
+
+/* Quote styles */
+.quote-container {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  color: rgb(46, 15, 104);
+  text-align: right;
+}
+
+.quote {
+  font-style: Arial, sans-serif;
+  font-size: 3rem;
+  width: 25rem;
+  font-weight: bolder;
+}
+
+.input-feild{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 40%;
+  box-sizing: border-box;
+  margin-right: 10px;
+  background-color: #f3f3f3;
+}
+
+.add-btn {
+  padding: 9px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 10%;
+  box-sizing: border-box;
+  margin-right: 10px;
+  background-color: orange;
+}
+
+.act-btn {
+  padding: 9px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  background-color: #ff9248;
 }
