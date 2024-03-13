@@ -88,47 +88,49 @@ function App({ tasks, addTask, updateTask, toggleTask, deleteTask }) {
         <div className="task-list">
           <h2>Tasks</h2>
           {tasks.length === 0 ? (
-            <p>No tasks added yet.</p>
+            <p>No tasks added yet.🙄</p>
           ) : (
-            <table>
-              <thead>
-                <tr>
-                  <th>Sr no.&nbsp;</th>
-                  <th>Title&nbsp;</th>
-                  <th>Description&nbsp;</th>
-                  <th>Status&nbsp;&nbsp;</th>
-                  <th>Mark as Completed&nbsp;&nbsp;</th>
-                  <th>Actions&nbsp;</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tasks.map((task, index) => (
-                  <tr key={task.id} className={task.completed ? 'completed' : ''}>
-                    <td>{index + 1}&nbsp;</td>
-                    <td>{task.title}&nbsp;&nbsp;&nbsp;</td>
-                    <td>{task.description}&nbsp;&nbsp;&nbsp;</td>
-                    <td>{task.completed ? 'Completed' : 'Pending'}</td>
-                    <td>
-                      <input
-                        type="checkbox"
-                        checked={task.completed}
-                        onChange={() => handleToggle(task.id)}
-                      />
-                    </td>
-                    <td>
-                      {!task.completed && (
-                        <>
-                          <button className='act-btn' onClick={() => handleEdit(task.id, task.title, task.description)}>Edit</button>
-                          <button className='act-btn' onClick={() => handleDelete(task.id)}>Delete</button>
-                        </>
-                      )}
-                    </td>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Sr no.&nbsp;</th>
+                    <th>Title&nbsp;</th>
+                    <th>Description&nbsp;</th>
+                    <th>Status&nbsp;&nbsp;</th>
+                    <th>Mark as Completed&nbsp;&nbsp;</th>
+                    <th>Actions&nbsp;</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {tasks.map((task, index) => (
+                    <tr key={task.id} className={task.completed ? 'completed' : ''}>
+                      <td>{index + 1}&nbsp;</td>
+                      <td>{task.title}&nbsp;&nbsp;&nbsp;</td>
+                      <td>{task.description}&nbsp;&nbsp;&nbsp;</td>
+                      <td>{task.completed ? 'Completed' : 'Pending'}</td>
+                      <td>
+                        <input
+                          type="checkbox"
+                          checked={task.completed}
+                          onChange={() => handleToggle(task.id)}
+                        />
+                      </td>
+                      <td>
+                        {!task.completed && (
+                          <>
+                            <button className='act-btn' onClick={() => handleEdit(task.id, task.title, task.description)}>Edit</button>
+                            <button className='act-btn' onClick={() => handleDelete(task.id)}>Delete</button>
+                          </>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <button className='act-btn' onClick={handleClearCompleted}>Clear Completed</button>
+            </div>
           )}
-          <button className='act-btn' onClick={handleClearCompleted}>Clear Completed</button>
         </div>
       </header>
     </div>
